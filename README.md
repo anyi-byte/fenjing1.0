@@ -834,9 +834,19 @@ fenjing crack --url "http://target/" --method GET --inputs name --tamper-cmd "ba
 - 是否需要 `--raw`
 - 是否应关闭 `--urlencode-payload`
 
+## 17.新增三种主题
+
+![image-20260407135829219](C:\Users\29456\AppData\Roaming\Typora\typora-user-images\image-20260407135829219.png)
+
+![image-20260407135846480](C:\Users\29456\AppData\Roaming\Typora\typora-user-images\image-20260407135846480.png)
+
+
+
+![image-20260407135902056](C:\Users\29456\AppData\Roaming\Typora\typora-user-images\image-20260407135902056.png)
+
 ## 16. 二开信息
 
-增强找SSTI链路，增强解题能力，多链路利用方式，fenjing原版许多未解开的题目，该项目已具备解开能力，并且修复多数小bug
+增强找SSTI链路，增强解题能力，多链路利用方式
 
 ## 17. 致谢
 
