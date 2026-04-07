@@ -836,7 +836,7 @@ fenjing crack --url "http://target/" --method GET --inputs name --tamper-cmd "ba
 
 ## 16. 二开信息
 
-增强找SSTI链路，增强解题能力，多链路利用方式
+增强找SSTI链路，增强解题能力，多链路利用方式，fenjing原版许多未解开的题目，该项目已具备解开能力，并且修复多数小bug
 
 ## 17. 致谢
 
