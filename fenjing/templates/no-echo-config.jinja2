@@ -1,0 +1,88 @@
+<details class="form-details">
+  <summary>无回显模块</summary>
+  <div class="form-row form-row-checkbox">
+    <label for="form-no-echo">启用无回显</label>
+    <input type="checkbox" name="no_echo" id="form-no-echo" />
+  </div>
+  <div class="form-row">
+    <label for="form-outbound-enabled">外带方式</label>
+    <select name="outbound_enabled" id="form-outbound-enabled">
+      <option value="true" selected>优先HTTP/DNS外带</option>
+      <option value="false">仅时间盲注</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-callback-url">回调地址</label>
+    <input type="text" name="no_echo_callback_url" id="form-no-echo-callback-url" placeholder="http://127.0.0.1:11452/callback" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-receiver-api">接收器API</label>
+    <input type="text" name="no_echo_receiver_api" id="form-no-echo-receiver-api" placeholder="http://127.0.0.1:11452/records" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-listen-host">监听地址</label>
+    <input type="text" name="no_echo_listen_host" id="form-no-echo-listen-host" value="127.0.0.1" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-listen-port">监听端口</label>
+    <input type="text" name="no_echo_listen_port" id="form-no-echo-listen-port" value="0" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-dns-domain">DNS域名</label>
+    <input type="text" name="no_echo_dns_domain" id="form-no-echo-dns-domain" placeholder="dnslog.example.com" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-dnslog-command">DNSLog命令</label>
+    <input type="text" name="no_echo_dnslog_command" id="form-no-echo-dnslog-command" placeholder="python poll_dnslog.py" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-probe-timeout">探测超时</label>
+    <input type="text" name="no_echo_probe_timeout" id="form-no-echo-probe-timeout" value="4.0" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-poll-interval">轮询间隔</label>
+    <input type="text" name="no_echo_poll_interval" id="form-no-echo-poll-interval" value="0.2" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-chunk-size">HTTP分块长度</label>
+    <input type="text" name="no_echo_chunk_size" id="form-no-echo-chunk-size" value="96" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-blind-delay">盲注延迟</label>
+    <input type="text" name="no_echo_blind_delay" id="form-no-echo-blind-delay" value="1.2" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-blind-threshold">盲注阈值</label>
+    <input type="text" name="no_echo_blind_threshold" id="form-no-echo-blind-threshold" value="0.65" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-blind-max-length">盲注最大长度</label>
+    <input type="text" name="no_echo_blind_max_length" id="form-no-echo-blind-max-length" value="256" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-command-timeout">命令超时</label>
+    <input type="text" name="no_echo_command_timeout" id="form-no-echo-command-timeout" value="15.0" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-waf-keyword">WAF拦截关键字</label>
+    <div class="hint-question-mark" title="响应中包含此关键字时判定为被WAF拦截，如 Forbidden">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M11.967 12.75C12.967 11.75 13.967 11.3546 13.967 10.25C13.967 9.14543 13.0716 8.25 11.967 8.25C11.0351 8.25 10.252 8.88739 10.03 9.75M11.967 15.75H11.977M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+          stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <input type="text" name="no_echo_waf_keyword" id="form-no-echo-waf-keyword" placeholder="Forbidden" />
+  </div>
+  <div class="form-row">
+    <label for="form-no-echo-ok-keyword">正常响应关键字</label>
+    <div class="hint-question-mark" title="响应中包含此关键字时判定为正常通过WAF，如 ok">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M11.967 12.75C12.967 11.75 13.967 11.3546 13.967 10.25C13.967 9.14543 13.0716 8.25 11.967 8.25C11.0351 8.25 10.252 8.88739 10.03 9.75M11.967 15.75H11.977M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+          stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <input type="text" name="no_echo_ok_keyword" id="form-no-echo-ok-keyword" placeholder="ok" />
+  </div>
+</details>

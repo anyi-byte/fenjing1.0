@@ -1,0 +1,744 @@
+/* ============================================================
+   THEME SYSTEM - 3 Themes for Fenjing WebUI
+   1. Neon Dark   (黑色荧光主题)
+   2. Clean Light  (白色简洁主题)
+   3. Cosmic Purple (紫色星空主题)
+   ============================================================ */
+
+/* ============================================================
+   THEME SWITCHER UI
+   ============================================================ */
+
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.theme-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+}
+
+.theme-btn:hover {
+  transform: scale(1.2);
+}
+
+.theme-btn.active {
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.theme-btn-neon {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
+  box-shadow: 0 0 6px #00ff88;
+}
+
+.theme-btn-light {
+  background: linear-gradient(135deg, #ffffff 0%, #e8ecf1 100%);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-btn-cosmic {
+  background: linear-gradient(135deg, #1a0533 0%, #4a1a8a 50%, #ff6b35 100%);
+}
+
+/* ============================================================
+   1. NEON DARK THEME (黑色荧光主题)
+   - 深黑背景
+   - 荧光绿/蓝文字发光效果
+   - Cyberpunk 风格
+   ============================================================ */
+
+[data-theme="neon"] {
+  --orange: #00ff88;
+  --background1: #0a0a0f;
+  --background2: #0f0f1a;
+  --background3: #141425;
+  --grey: #b0ffdd;
+  --header-bg: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b2ff7 100%);
+  --header-text: #0a0a0f;
+  --text-glow-color: #00ff88;
+  --text-glow-secondary: #00d4ff;
+  --accent-pink: #ff00aa;
+  --border-glow: rgba(0, 255, 136, 0.15);
+  --input-bg: #0c0c18;
+  --submit-bg: linear-gradient(135deg, #00ff88, #00d4ff);
+  --submit-text: #0a0a0f;
+  --svg-stroke: #0a0a0f;
+  --scrollbar-color: #00ff8866;
+  --panel-border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+/* Base glow on all text */
+[data-theme="neon"] * {
+  color: var(--grey);
+}
+
+[data-theme="neon"] body,
+[data-theme="neon"] html {
+  background-color: var(--background1);
+}
+
+/* Header neon gradient */
+[data-theme="neon"] header {
+  background: var(--header-bg);
+  box-shadow:
+    0 0 30px rgba(0, 255, 136, 0.3),
+    0 0 60px rgba(0, 212, 255, 0.15),
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+  border: none;
+}
+
+[data-theme="neon"] .header-product-name {
+  color: var(--header-text);
+  text-shadow:
+    0 0 10px rgba(0, 255, 136, 0.5),
+    0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+[data-theme="neon"] .icon-button svg path {
+  stroke: var(--header-text);
+}
+
+[data-theme="neon"] .icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+[data-theme="neon"] .navbar-button-current {
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* Main panels */
+[data-theme="neon"] .main-left,
+[data-theme="neon"] .right-panel {
+  background-color: var(--background2);
+  border: var(--panel-border);
+  box-shadow:
+    0 0 20px rgba(0, 255, 136, 0.05),
+    inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Labels - neon glow effect */
+[data-theme="neon"] .form-row label {
+  color: #00ff88;
+  text-shadow:
+    0 0 7px rgba(0, 255, 136, 0.8),
+    0 0 15px rgba(0, 255, 136, 0.5),
+    0 0 30px rgba(0, 255, 136, 0.3),
+    0 0 50px rgba(0, 255, 136, 0.15);
+  font-weight: 600;
+}
+
+/* Input fields */
+[data-theme="neon"] .form-row input,
+[data-theme="neon"] .form-row select {
+  background-color: var(--input-bg);
+  color: #00d4ff;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+[data-theme="neon"] .form-row input:focus,
+[data-theme="neon"] .form-row select:focus {
+  border-color: #00ff88;
+  box-shadow:
+    0 0 10px rgba(0, 255, 136, 0.3),
+    0 0 20px rgba(0, 255, 136, 0.1),
+    inset 0 0 10px rgba(0, 255, 136, 0.05);
+}
+
+[data-theme="neon"] .form-row input::placeholder {
+  color: rgba(0, 212, 255, 0.3);
+}
+
+/* Submit button - neon glow */
+[data-theme="neon"] input[type="submit"] {
+  background: var(--submit-bg);
+  color: var(--submit-text);
+  font-weight: 700;
+  border: none;
+  text-shadow: none;
+  box-shadow:
+    0 0 15px rgba(0, 255, 136, 0.4),
+    0 0 30px rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+[data-theme="neon"] input[type="submit"]:hover {
+  background: linear-gradient(135deg, #33ffaa, #33ddff);
+  box-shadow:
+    0 0 20px rgba(0, 255, 136, 0.6),
+    0 0 40px rgba(0, 255, 136, 0.3),
+    0 0 60px rgba(0, 255, 136, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Details/Summary */
+[data-theme="neon"] .form-details {
+  background-color: var(--input-bg);
+  border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+[data-theme="neon"] .form-details summary {
+  color: #00d4ff;
+  text-shadow:
+    0 0 7px rgba(0, 212, 255, 0.6),
+    0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Textarea */
+[data-theme="neon"] .right-panel textarea {
+  color: #00ff88;
+  text-shadow:
+    0 0 4px rgba(0, 255, 136, 0.6),
+    0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+[data-theme="neon"] .right-panel input[type="text"] {
+  background-color: var(--input-bg);
+  color: #00d4ff;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.4);
+}
+
+[data-theme="neon"] .right-panel input[type="text"]:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+/* Scrollbar */
+[data-theme="neon"] .scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  box-shadow: 0 0 6px rgba(0, 255, 136, 0.5);
+}
+
+/* Hint icons */
+[data-theme="neon"] .hint-question-mark svg path {
+  stroke: #00ff8880;
+}
+
+/* Neon pulse animation on header */
+[data-theme="neon"] header {
+  animation: neonHeaderPulse 4s ease-in-out infinite;
+}
+
+@keyframes neonHeaderPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(0, 255, 136, 0.3),
+      0 0 60px rgba(0, 212, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(0, 255, 136, 0.5),
+      0 0 80px rgba(0, 212, 255, 0.25),
+      0 0 120px rgba(123, 47, 247, 0.1);
+  }
+}
+
+/* Neon scanline overlay effect */
+[data-theme="neon"] .root::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 136, 0.008) 2px,
+    rgba(0, 255, 136, 0.008) 4px
+  );
+}
+
+/* ============================================================
+   2. CLEAN LIGHT THEME (白色简洁主题)
+   - 纯白/浅灰背景
+   - 深色文字
+   - 柔和阴影，干净利落
+   ============================================================ */
+
+[data-theme="light"] {
+  --orange: #4f6df5;
+  --background1: #f0f2f5;
+  --background2: #ffffff;
+  --background3: #f7f8fa;
+  --grey: #2d3748;
+  --header-bg: linear-gradient(135deg, #4f6df5 0%, #7c5cf5 50%, #a855f7 100%);
+  --header-text: #ffffff;
+  --input-bg: #f0f2f5;
+  --input-border: #d1d5db;
+  --input-text: #1a202c;
+  --submit-bg: linear-gradient(135deg, #4f6df5, #7c5cf5);
+  --submit-text: #ffffff;
+  --svg-stroke: #ffffff;
+  --scrollbar-color: #c4c9d4;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] body,
+[data-theme="light"] html {
+  background-color: var(--background1);
+}
+
+[data-theme="light"] * {
+  color: var(--grey);
+}
+
+/* Header */
+[data-theme="light"] header {
+  background: var(--header-bg);
+  box-shadow: var(--shadow-lg);
+  border: none;
+}
+
+[data-theme="light"] .header-product-name {
+  color: var(--header-text);
+}
+
+[data-theme="light"] .icon-button svg path {
+  stroke: var(--header-text);
+}
+
+[data-theme="light"] .icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .navbar-button-current {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Main panels */
+[data-theme="light"] .main-left {
+  background-color: var(--background2);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .right-panel {
+  background-color: var(--background2);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Labels */
+[data-theme="light"] .form-row label {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+/* Input fields */
+[data-theme="light"] .form-row input,
+[data-theme="light"] .form-row select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .form-row input:focus,
+[data-theme="light"] .form-row select:focus {
+  border-color: #4f6df5;
+  box-shadow: 0 0 0 3px rgba(79, 109, 245, 0.15);
+  background-color: #ffffff;
+}
+
+[data-theme="light"] .form-row input::placeholder {
+  color: #9ca3af;
+}
+
+/* Submit button */
+[data-theme="light"] input[type="submit"] {
+  background: var(--submit-bg);
+  color: var(--submit-text);
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 8px rgba(79, 109, 245, 0.3);
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] input[type="submit"]:hover {
+  background: linear-gradient(135deg, #6380f7, #9070f7);
+  box-shadow: 0 4px 15px rgba(79, 109, 245, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Details/Summary */
+[data-theme="light"] .form-details {
+  background-color: var(--input-bg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .form-details summary {
+  color: #4a5568;
+  font-weight: 600;
+}
+
+/* Textarea */
+[data-theme="light"] .right-panel textarea {
+  color: #2d3748;
+}
+
+[data-theme="light"] .right-panel input[type="text"] {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+}
+
+[data-theme="light"] .right-panel input[type="text"]:focus {
+  border-color: #4f6df5;
+  box-shadow: 0 0 0 3px rgba(79, 109, 245, 0.15);
+}
+
+/* Scrollbar */
+[data-theme="light"] .scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+}
+
+/* Hint icons */
+[data-theme="light"] .hint-question-mark svg path {
+  stroke: #9ca3af;
+}
+
+/* Theme switcher adaptation */
+[data-theme="light"] .theme-switcher {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .theme-btn {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .theme-btn.active {
+  border-color: #4f6df5;
+  box-shadow: 0 0 10px rgba(79, 109, 245, 0.3);
+}
+
+/* Checkbox */
+[data-theme="light"] .form-row-checkbox input[type="checkbox"] {
+  accent-color: #4f6df5;
+}
+
+/* ============================================================
+   3. COSMIC PURPLE THEME (紫色星空主题)
+   - 深紫色渐变背景
+   - 金色/暖橙色调
+   - 星空点缀 + 微光动画
+   ============================================================ */
+
+[data-theme="cosmic"] {
+  --orange: #ff8c42;
+  --background1: #0d0221;
+  --background2: #150535;
+  --background3: #1a0a40;
+  --grey: #e8d5f5;
+  --header-bg: linear-gradient(135deg, #ff6b35 0%, #f7931e 40%, #ffcc02 100%);
+  --header-text: #1a0533;
+  --accent-gold: #ffd700;
+  --accent-warm: #ff8c42;
+  --input-bg: #120430;
+  --input-border: rgba(255, 140, 66, 0.2);
+  --submit-bg: linear-gradient(135deg, #ff6b35, #ffd700);
+  --submit-text: #1a0533;
+  --svg-stroke: #1a0533;
+  --scrollbar-color: rgba(255, 140, 66, 0.4);
+  --panel-border: 1px solid rgba(255, 140, 66, 0.1);
+  --star-color: rgba(255, 215, 0, 0.6);
+}
+
+[data-theme="cosmic"] body,
+[data-theme="cosmic"] html {
+  background: linear-gradient(170deg, #0d0221 0%, #150535 40%, #1a0a40 70%, #0d0221 100%);
+  background-attachment: fixed;
+}
+
+[data-theme="cosmic"] * {
+  color: var(--grey);
+}
+
+/* Star field background */
+[data-theme="cosmic"] .root::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255, 215, 0, 0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 35%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 10%, rgba(255, 215, 0, 0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 45%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 20%, rgba(255, 140, 66, 0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 55%, rgba(255, 215, 0, 0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 65%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 80%, rgba(255, 215, 0, 0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 70%, rgba(255, 140, 66, 0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 85%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 40%, rgba(255, 215, 0, 0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 75%, rgba(255, 140, 66, 0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 90%, rgba(255, 215, 0, 0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 5%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 60%, rgba(255, 215, 0, 0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 20% 50%, rgba(255, 140, 66, 0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 95% 10%, rgba(255, 215, 0, 0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 95%, rgba(255, 140, 66, 0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 8% 42%, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+  animation: starTwinkle 6s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+[data-theme="cosmic"] .root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header - warm golden gradient */
+[data-theme="cosmic"] header {
+  background: var(--header-bg);
+  box-shadow:
+    0 0 30px rgba(255, 107, 53, 0.3),
+    0 0 60px rgba(255, 204, 2, 0.15);
+  border: none;
+}
+
+[data-theme="cosmic"] .header-product-name {
+  color: var(--header-text);
+  text-shadow: 0 0 20px rgba(255, 204, 2, 0.3);
+}
+
+[data-theme="cosmic"] .icon-button svg path {
+  stroke: var(--header-text);
+}
+
+[data-theme="cosmic"] .icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 12px rgba(255, 204, 2, 0.3);
+}
+
+[data-theme="cosmic"] .navbar-button-current {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(255, 204, 2, 0.3);
+}
+
+/* Main panels */
+[data-theme="cosmic"] .main-left {
+  background: linear-gradient(180deg, var(--background2) 0%, var(--background3) 100%);
+  border: var(--panel-border);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 0 30px rgba(255, 140, 66, 0.03);
+}
+
+[data-theme="cosmic"] .right-panel {
+  background: linear-gradient(180deg, var(--background2) 0%, var(--background3) 100%);
+  border: var(--panel-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Labels - warm golden glow */
+[data-theme="cosmic"] .form-row label {
+  color: #ffd700;
+  text-shadow:
+    0 0 5px rgba(255, 215, 0, 0.5),
+    0 0 12px rgba(255, 215, 0, 0.25),
+    0 0 25px rgba(255, 215, 0, 0.1);
+  font-weight: 600;
+}
+
+/* Input fields */
+[data-theme="cosmic"] .form-row input,
+[data-theme="cosmic"] .form-row select {
+  background-color: var(--input-bg);
+  color: #e8d5f5;
+  border: 1px solid var(--input-border);
+  transition: all 0.3s ease;
+}
+
+[data-theme="cosmic"] .form-row input:focus,
+[data-theme="cosmic"] .form-row select:focus {
+  border-color: #ff8c42;
+  box-shadow:
+    0 0 10px rgba(255, 140, 66, 0.25),
+    0 0 20px rgba(255, 140, 66, 0.1);
+}
+
+[data-theme="cosmic"] .form-row input::placeholder {
+  color: rgba(232, 213, 245, 0.3);
+}
+
+/* Submit button */
+[data-theme="cosmic"] input[type="submit"] {
+  background: var(--submit-bg);
+  color: var(--submit-text);
+  font-weight: 700;
+  border: none;
+  box-shadow:
+    0 0 15px rgba(255, 107, 53, 0.35),
+    0 0 30px rgba(255, 204, 2, 0.15);
+  transition: all 0.3s ease;
+}
+
+[data-theme="cosmic"] input[type="submit"]:hover {
+  background: linear-gradient(135deg, #ff8855, #ffe033);
+  box-shadow:
+    0 0 20px rgba(255, 107, 53, 0.5),
+    0 0 40px rgba(255, 204, 2, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Details/Summary */
+[data-theme="cosmic"] .form-details {
+  background-color: var(--input-bg);
+  border: 1px solid rgba(255, 140, 66, 0.1);
+}
+
+[data-theme="cosmic"] .form-details summary {
+  color: #ff8c42;
+  text-shadow:
+    0 0 5px rgba(255, 140, 66, 0.4),
+    0 0 12px rgba(255, 140, 66, 0.2);
+}
+
+/* Textarea */
+[data-theme="cosmic"] .right-panel textarea {
+  color: #e8d5f5;
+  text-shadow: 0 0 3px rgba(232, 213, 245, 0.2);
+}
+
+[data-theme="cosmic"] .right-panel input[type="text"] {
+  background-color: var(--input-bg);
+  color: #e8d5f5;
+  border: 1px solid var(--input-border);
+}
+
+[data-theme="cosmic"] .right-panel input[type="text"]:focus {
+  border-color: #ff8c42;
+  box-shadow: 0 0 10px rgba(255, 140, 66, 0.25);
+}
+
+/* Scrollbar */
+[data-theme="cosmic"] .scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  box-shadow: 0 0 4px rgba(255, 140, 66, 0.3);
+}
+
+/* Hint icons */
+[data-theme="cosmic"] .hint-question-mark svg path {
+  stroke: rgba(255, 215, 0, 0.4);
+}
+
+/* Nebula glow animation on panels */
+[data-theme="cosmic"] .main-left {
+  animation: cosmicGlow 8s ease-in-out infinite;
+}
+
+@keyframes cosmicGlow {
+  0%, 100% {
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      inset 0 0 30px rgba(255, 140, 66, 0.03);
+  }
+  50% {
+    box-shadow:
+      0 4px 25px rgba(0, 0, 0, 0.35),
+      inset 0 0 40px rgba(255, 140, 66, 0.06),
+      0 0 15px rgba(255, 107, 53, 0.05);
+  }
+}
+
+/* Checkbox */
+[data-theme="cosmic"] .form-row-checkbox input[type="checkbox"] {
+  accent-color: #ff8c42;
+}
+
+/* Neon checkbox */
+[data-theme="neon"] .form-row-checkbox input[type="checkbox"] {
+  accent-color: #00ff88;
+}
+
+/* ============================================================
+   SMOOTH TRANSITIONS
+   ============================================================ */
+
+body,
+header,
+.main-left,
+.main-right,
+.right-panel,
+.form-details,
+.form-row input,
+.form-row select,
+.form-row label,
+.right-panel textarea,
+.right-panel input,
+input[type="submit"],
+.icon-button {
+  transition:
+    background-color 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+/* ============================================================
+   THEME SWITCHER TOOLTIP
+   ============================================================ */
+
+.theme-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.theme-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
