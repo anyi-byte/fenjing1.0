@@ -836,13 +836,11 @@ fenjing crack --url "http://target/" --method GET --inputs name --tamper-cmd "ba
 
 ## 17.新增三种主题
 
-![image-20260407135829219](C:\Users\29456\AppData\Roaming\Typora\typora-user-images\image-20260407135829219.png)
+![image-20260407141029353](./README.assets/image-20260407141029353.png)
 
-![image-20260407135846480](C:\Users\29456\AppData\Roaming\Typora\typora-user-images\image-20260407135846480.png)
+![image-20260407141055968](./README.assets/image-20260407141055968.png)
 
-
-
-![image-20260407135902056](C:\Users\29456\AppData\Roaming\Typora\typora-user-images\image-20260407135902056.png)
+![image-20260407141105584](./README.assets/image-20260407141105584.png)
 
 ## 16. 二开信息
 
